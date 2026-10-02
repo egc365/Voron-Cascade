@@ -1,0 +1,175 @@
+include,section,item,part_number,qty,note
+True,Required Tools,600mm (24”) straight edge or level (ruler if no other choice),,1,
+True,Required Tools,300mm (12”) metal machinist scale,Both inch and metric scales,1,
+True,Required Tools,"150mm (6”) calipers, preferably digital","200mm / 8"" as upgrade",1,
+True,Required Tools,Dial indicator (metric or imperial) with mag base & arm,"25mm / 1"" travel",1,
+True,Required Tools,"75mm (3”) machinist square, also 150mm (6”) if available.",Set of 4,1,
+True,Required Tools,123 blocks,with holes,2,
+True,Required Tools,"Step drill up to 1"" / 25mm",,1,
+True,Main Frame,"3030, 440mm, both ends tapped",HFSB6-3030-440-TPW,2,
+True,Main Frame,"3060, 410mm, both ends tapped",HFSB6-3060-410-TPW,2,
+True,Main Frame,"3060, 295mm, both ends tapped, counterbores",HFSB6-3060-295-TPW-Z8-YA15-YB45-YC140-YD170,2,
+True,Main Frame,"3060, 410mm, both ends tapped, counterbores",HFSB6-3060-410-TPW-Z8-YA120-YB290,2,
+True,Main Frame,"3060, 500mm, both ends tapped, counterbores",HFSB6-3060-500-TPW-Z8-XA120-XB150-YA15-YB485,1,
+True,Main Frame,"3060, 500mm, both ends tapped, counterbores",HFSB6-3060-500-TPW-Z8-XA350-XB380-YA15-YB485,1,
+True,Main Frame,"2020, 237mm, both ends tapped, wrench access holes",HFSB5-2020-237-TPW-AH50-BH75-CH205-DH230,2,
+True,Working Enclosure Frame,"2020, 190mm, both ends tapped",HFSB5-2020-190-TPW,2,
+True,Working Enclosure Frame,"2020, 265mm, both ends tapped",HFSB5-2020-265-TPW,4,
+True,Working Enclosure Frame,"2020, 469mm, both ends tapped, wrench access holes",HFSB5-2020-469-TPW-LCP-RCP,2,
+True,Frame Electronics Enclosure,"2020, 380mm, both ends tapped",HFSB5-2020-380-TPW,2,
+True,Frame Electronics Enclosure,"2020, 380mm, both ends tapped, wrench access holes",HFSB5-2020-380-TPW-AH20-BH90-CH190-DH360,2,
+True,Frame Electronics Enclosure,"2020, 290mm, both ends tapped",HFSB5-2020-290-TPW,2,
+True,Frame Electronics Enclosure,"2020, 290mm, both ends tapped, wrench access hole",HFSB5-2020-290-TPW-AH20,2,
+True,Frame Electronics Enclosure,"2020, 160mm, both ends tapped, wrench access holes",HFSB5-2020-160-TPW-LCP-RCP,4,
+True,Linear Rails,"MGN15C LINEAR GUIDE RAIL, 200mm","MGN15, 200mm length, dual compact carriage",2,
+True,Linear Rails,"MGN15H LINEAR GUIDE RAIL, 400mm","MGN15, 400mm length, dual carriage",4,
+True,Motion Components,"SFU1204 ball screw, 250mm",Assembly including BK10 and DSG12H (BF10 not used),1,
+True,Motion Components,"SFU1204 ball screw, 400mm","Complete assembly including BK10, BF10, and DSG12H",2,
+True,Motion Components,Motor drive pulley,"HTD-3M 9mm width, 20 tooth, 5mm or 6.35mm bore (per motor)",3,
+True,Motion Components,Ball screw drive pulley,"HTD-3M 9mm width, 20 tooth, 8mm bore",3,
+True,Motion Components,"X,Y drive belts","HTD-3M 9mm width, closed loop, 189mm long",2,
+True,Motion Components,Z drive belt,"HTD-3M 9mm width, closed loop, 288mm long",1,
+True,Motion Components,"NEMA23 motor, up to 117mm length",LDO 57STH86-3004A,3,
+True,Machined Parts (see other tab),X Carriage Plate,[mp-a]_x_carriage_plate,1,
+True,Machined Parts (see other tab),X Ballscrew Nut Spacer,[mp-a]_x_nut_block_spacer,1,
+True,Machined Parts (see other tab),Y Ballscrew Front Mount,[mp-a]_y_ballscrew_mount_front,1,
+True,Machined Parts (see other tab),Y Ballscrew Rear Mount,[mp-a]_y_ballscrew_mount_rear,1,
+True,Machined Parts (see other tab),Y Carriage Spacer,[mp-a]_y_carriage_block,2,
+True,Machined Parts (see other tab),Y Ballscrew Nut Spacer,[mp-a]_y_nut_block_spacer,1,
+False,Machined Parts (see other tab),SELECT: Z Carriage Plate (50mm spindle mount),[mp-a]_z_carriage_plate_M6_70x20,1,Z plate choice
+False,Machined Parts (see other tab),SELECT: Z Carriage Plate (65mm spindle mount),[mp-a]_z_carriage_plate_M8_99x25,1,Z plate choice
+True,Machined Parts (see other tab),SELECT: Z Carriage Plate (80mm spindle mount),[mp-a]_z_carriage_plate_M8_80x30,1,Z plate choice
+False,Machined Parts (see other tab),"SELECT: Z Carriage Plate (blank, to be customized)",[mp-a]_z_carriage_plate_blank,1,Z plate choice
+True,Panels (see other tab),[sp-o]_frame_bottom_panel] (470x500),"Opaque Frame Panels (Aluminum or Steel 3mm (1/8""))",1,
+True,Panels (see other tab),[sp-o]_gantry_back_panel (468x294),"Opaque Frame Panels (Aluminum or Steel 3mm (1/8""))",1,
+True,Panels (see other tab),[sp-o]_gantry_front_brace (168x180),"Opaque Frame Panels (Aluminum or Steel 3mm (1/8""))",2,
+True,Panels (see other tab),[sp-o]_gantry_side_brace_panel_left (354x135),"Opaque Frame Panels (Aluminum or Steel 3mm (1/8""))",1,
+True,Panels (see other tab),[sp-o]_gantry_side_brace_panel_right (354x500),"Opaque Frame Panels (Aluminum or Steel 3mm (1/8""))",1,
+True,Panels (see other tab),[sp-c]_working_enclosure_panel_back_top (468x35),"Clear Working Enclosure Panels (Polycarbonate 4.5mm or 5mm (3/16""))",1,
+True,Panels (see other tab),[sp-c]_working_enclosure_panel_front_side (348x305),"Clear Working Enclosure Panels (Polycarbonate 4.5mm or 5mm (3/16""))",1,
+True,Panels (see other tab),[sp-c]_working_enclosure_panel_front_top (468x210),"Clear Working Enclosure Panels (Polycarbonate 4.5mm or 5mm (3/16""))",1,
+True,Panels (see other tab),[sp-c]_working_enclosure_panel_middle (468x305),"Clear Working Enclosure Panels (Polycarbonate 4.5mm or 5mm (3/16""))",2,
+True,Panels (see other tab),[ep-o]_frame_enclosure_panel_back (329x159),"Opaque Electronics Enclosure Panels (ABS / PC / nylon 3mm (1/8""))",1,
+True,Panels (see other tab),[ep-o]_frame_enclosure_panel_bottom (419x159),"Opaque Electronics Enclosure Panels (ABS / PC / nylon 3mm (1/8""))",1,
+True,Panels (see other tab),[ep-o]_frame_enclosure_panel_front (329x159),"Opaque Electronics Enclosure Panels (ABS / PC / nylon 3mm (1/8""))",1,
+True,Panels (see other tab),[ep-o]_frame_enclosure_panel_top (419x159),"Opaque Electronics Enclosure Panels (ABS / PC / nylon 3mm (1/8""))",1,
+True,Panels (see other tab),[ep-c]_frame_enclosure_panel_side (380x302),"Smoked Electronics Enclosure Panels (Smoked Acrylic 3mm (1/8""))",1,
+True,Work Table Options,T-Slot single sided extrusions,HFSQN4-15100-300 - cheaper option,2,Option 1: T-Slot table
+False,Work Table Options,SMW 340x230 Grid Plate,Recommended upgrade - special order,1,Option 2: Machined table
+True,Spindle Options,G-Penny 1.5kw 24k RPM ER16 spindle with H100 VFD,Package,1,Option 1: AC VFD (strongly preferred)
+True,Spindle Options,65mm Spindle clamp with 80x30 bolt pattern,G-Penny provided clamp does not fit,1,Option 1: AC VFD (strongly preferred)
+True,Spindle Options,Meanwell LRS-350-48,Stepper motor power supply,1,Option 1: AC VFD (strongly preferred)
+True,Spindle Options,"18 AWG (0.75mm^2), 3 core, braided shield, high flex VFD cable",Spindle cable is not provided,2,Option 1: AC VFD (strongly preferred)
+False,Spindle Options,500W Brushless ER16 (or ER11) Spindle,Commonly bought as package,1,Option 2: DC brushless (discouraged but possible)
+False,Spindle Options,Meanwell SE-600-48,"<included in package> (dual purpose, spindle + stepper motors)",1,Option 2: DC brushless (discouraged but possible)
+False,Spindle Options,Spindle Clamp,<included in package>,1,Option 2: DC brushless (discouraged but possible)
+False,Spindle Options,WS55-220,<included in package>,1,Option 2: DC brushless (discouraged but possible)
+True,Electronics,"60mm Axial Fan, 24V",,1,
+True,Electronics,"DIN Rail, 350mm",,1,
+True,Electronics,"DIN Rail, 100mm",,1,
+True,Electronics,Drag Chain 15x15,2-bolt end connectors,1,
+True,Electronics,E-Stop Button,"22mm through-hole, 1NO1NC",1,
+True,Electronics,PowerCON panel connector,Neutrik NAC3MPXXA,1,
+True,Electronics,PowerCON power cable,"One end Neutrik NAC3FXXA, other end local mains connector",1,
+True,Electronics,"24V, 30W power supply",Meanwell IRM-30-24ST,1,
+True,Electronics,"5V, 30W power supply",Meanwell IRM-30-5ST,1,
+True,Electronics,Inductive end stop,PL-08N or equivalent,3,
+True,Electronics,"TA35 rocker circuit breaker, 15A",Schurter TA35-CBDWF150C0,1,
+True,Electronics,"Mini contactor, DIN mounted, 120V or 240V coil voltage","Weg CWC025-00-30V18 (120V), CWC016-01-30V24 (230V)",1,
+True,Electronics,Sexbolt endstop PCB with included KW10,Part of sexbolt endstop kit,1,
+True,Electronics,Daylight on a matchstick,,1,
+True,Electronics,"Flat button, M12 or M16 diameter, with nut","Preferably one each in red, green, and yellow (or white)",3,
+True,Electronics,KW10 microswitch,Used for door safety switch,2,
+True,Electronics,Wago 5-conductor,220-415,7,
+False,Electronics,3D probe - OPTIONAL,Must be normal open,1,optional
+False,Electronics,Above table tool setter - OPTIONAL,,1,optional
+True,Electronics,Wire,"20awg PTFE, 2m",1,
+True,Electronics,,"24awg PTFE, 4m",1,
+True,Electronics,,"14awg PVC, 1m",1,
+True,Controller Configuration,Expatria FlexiHAL control board,,1,Option 1: Expatria FlexiHAL + external drivers
+True,Controller Configuration,DM542T stepper motor controller,,3,Option 1: Expatria FlexiHAL + external drivers
+False,Controller Configuration,BTT Scylla CNC control board,Motor drivers are included,1,Option 2: BTT Scylla
+True,Local Management Computer,Raspberry Pi 4+ or better,,1,
+True,Local Management Computer,"10.1"" touchscreen with VESA 75 mount","1280x800 minimum, HD (1920x1080) preferred",1,
+True,Local Management Computer,USB-A to USB-C cable,,1,
+True,Local Management Computer,USB-C to bare wire power cable,Supplemental power for display,1,
+True,Local Management Computer,"Micro-HDMI to HDMI cable, 0.5m-1m long",Pi to touchscreen with no adapters,1,
+True,Local Management Computer,180 angle USB-C adapter,,2,
+True,Local Management Computer,180 angle HDMI adapter,,1,
+True,Local Management Computer,USB-C keystone,,1,
+True,Local Management Computer,"USB-C cable, 0.5m",internal cable for keystone,1,
+False,Local Management Computer,Wireless mini-keyboard - OPTIONAL,Logitech K400 or similar,1,optional
+True,Hardware,"Rubber feet, 20mm diameter",GOM-04,6,
+True,Hardware,"M3 Threaded Insert, Voron spec",,38,
+True,Hardware,M3 2020 T-Nut,,2,
+True,Hardware,M3 3030 T-Nut,,60,
+True,Hardware,M5 2020 T-Nut,,115,
+True,Hardware,M5 3030 T-Nut,,43,
+True,Hardware,M6 3030 T-Nut,,82,
+True,Hardware,M3 Washer,,2,
+True,Hardware,M4 Washer,,12,
+True,Hardware,M5 Washer,,19,
+True,Hardware,M6 Washer,,5,
+True,Hardware,M8 Washer,,4,
+True,Hardware,M3 Hex Nut,,3,
+True,Hardware,M4 Hex Nut,,10,
+True,Hardware,M5 Hex Nut,,21,
+True,Hardware,M6 Hex Nut,,8,
+True,Hardware,M8 Hex Nut,,1,
+True,Hardware,M5x20 sexbolt / chicago bolt,Part of sexbolt endstop kit,1,
+True,Hardware,M2x10 Self-tapping Screw,,14,
+True,Hardware,M3x8 FHCS,,7,
+True,Hardware,M3x10 FHCS,,2,
+True,Hardware,M3x10 BHCS,,8,
+True,Hardware,M4x6 BHCS,,8,
+True,Hardware,M4x14 BHCS,,18,
+True,Hardware,M5x8 BHCS,,39,
+True,Hardware,M5x10 BHCS,,79,
+True,Hardware,M5x12 BHCS,,13,
+True,Hardware,M5x16 BHCS,,34,
+True,Hardware,M5x40 BHCS,,1,
+True,Hardware,M6x10 BHCS,,85,
+True,Hardware,M6x16 BHCS,,8,
+True,Hardware,M8x10 BHCS,,5,
+True,Hardware,M8x16 BHCS,,4,
+True,Hardware,M3x8 SHCS,,9,
+True,Hardware,M3x10 SHCS,,54,
+True,Hardware,M3x12 SHCS,,65,
+True,Hardware,M3x20 SHCS,,13,
+True,Hardware,M3x25 SHCS,,6,
+True,Hardware,M3x50 SHCS,,1,
+True,Hardware,M4x6 SHCS,Part of sexbolt endstop kit,1,
+True,Hardware,M4x16 SHCS,,8,
+True,Hardware,M5x10 SHCS,,9,
+True,Hardware,M5x12 SHCS,,22,
+True,Hardware,M5x16 SHCS,,9,
+True,Hardware,M5x20 SHCS,,18,
+True,Hardware,M5x25 SHCS,,6,
+True,Hardware,M5x30 SHCS,,10,
+True,Hardware,M5x60 SHCS,,2,
+True,Hardware,M6x35 SHCS,,11,
+True,Hardware,M6x40 SHCS,,6,
+False,Hardware,M6x65 SHCS,"Optional, For 50mm spindle mount",4,optional
+True,Hardware,M8x40 SHCS,,20,
+True,Hardware,M8x70 SHCS,,8,
+False,Hardware,M8x90 SHCS,"Optional, For 80mm spindle mount",4,optional
+True,Hardware,M6x100 threaded rod,,1,
+True,Hardware,"Precision shim tape, 0.1mm (0.004”) thick, <10mm wide",,1,
+True,Hardware,Accordion cover 15mmx300mm,Fabric (rubber infused) is preferred over plastic for flexibility.,2,
+True,Hardware,Loctite 242 or equivalent,,1,
+True,Hardware,1/4”x4” hardened steel dowel,,1,
+True,Hardware,"2mm x 100mm (4"") zip ties",,50,
+True,Hardware,"2020 extrusion slot cover, 1m section",,3,
+True,Hardware,"3030 extrusion slot cover, 1m section",,12,
+True,Hardware,MGN12 rail plugs,Used for X and Z rails only,50,
+False,Tools for drilling extrusion bed,"1/8"" / 3mm drill bit",,1,only if drilling/tapping raw stock
+False,Tools for drilling extrusion bed,3/16 / 5mm drill bit,,1,only if drilling/tapping raw stock
+False,Tools for drilling and preparing extrusions and panels,"9/64"" / 3.5mm drill bit",,1,only if drilling/tapping raw stock
+False,Tools for drilling and preparing extrusions and panels,"7/32"" / 5.5mm drill bit",,1,only if drilling/tapping raw stock
+False,Tools for drilling and preparing extrusions and panels,"21/64"" / 8.5mm drill bit",,1,only if drilling/tapping raw stock
+False,Tools for drilling and preparing extrusions and panels,M8 counterbore tool,,1,only if drilling/tapping raw stock
+False,Tools for drilling and preparing extrusions and panels,"9/16"" endmill with 1/2"" shank",Only if M8 counterbore is unavailable,,only if drilling/tapping raw stock
+False,Tools for drilling and preparing extrusions and panels,M3 tap,,1,only if drilling/tapping raw stock
+False,Tools for drilling and preparing extrusions and panels,M5 tap,,1,only if drilling/tapping raw stock
+False,Tools for drilling and preparing extrusions and panels,M8 tap,,1,only if drilling/tapping raw stock
+False,Tools for drilling and preparing extrusions and panels,Tap handle (if not already owned),,1,only if drilling/tapping raw stock

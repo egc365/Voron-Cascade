@@ -1,0 +1,360 @@
+<title>Cascade Vision Rig</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column around a full-bleed 3D stage; data in mono, headings in a machined display face. */
+:root {
+  --paper: #f2f4f5;
+  --panel: #ffffff;
+  --stage: #e3e8eb;
+  --ink: #15191d;
+  --muted: #56626c;
+  --line: #d3dade;
+  --accent: #0b7a84;
+  --cam-a: #0b7a84;
+  --cam-b: #b25e09;
+  --cam-c: #6a4bc4;
+  --good: #2f7d32;
+  --warn: #a35d00;
+  --display: "Chakra Petch", "Bahnschrift", "Arial Narrow", sans-serif;
+  --body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1316; --panel: #161c21; --stage: #1a2127; --ink: #e4e9ec; --muted: #94a1ab;
+    --line: #2a343c; --accent: #46c7d0; --cam-a: #46c7d0; --cam-b: #f0a04b; --cam-c: #a68bf0;
+    --good: #7cc47f; --warn: #f0b35b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1316; --panel: #161c21; --stage: #1a2127; --ink: #e4e9ec; --muted: #94a1ab;
+  --line: #2a343c; --accent: #46c7d0; --cam-a: #46c7d0; --cam-b: #f0a04b; --cam-c: #a68bf0;
+  --good: #7cc47f; --warn: #f0b35b; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--paper); color: var(--ink); font: 400 1rem/1.6 var(--body); }
+.wrap { max-width: 72rem; margin: 0 auto; padding-inline: 16px; padding-block: 2rem 4rem; display: grid; gap: 3rem; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; letter-spacing: 0.01em; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.05; }
+h2 { font-size: 1.6rem; line-height: 1.2; }
+h3 { font-size: 1.15rem; }
+p { margin: 0; max-width: 65ch; }
+.eyebrow { font: 500 0.75rem/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 1.125rem; color: var(--muted); }
+.lede strong { color: var(--ink); font-weight: 600; }
+header { display: grid; gap: 0.9rem; }
+section { display: grid; gap: 1.25rem; }
+.mono, td.num, .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+/* stage */
+.stage { position: relative; background: var(--stage); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+#view { display: block; width: 100%; aspect-ratio: 16 / 10; max-height: 72vh; max-width: 100%; touch-action: none; }
+.status { position: absolute; inset: 0; display: grid; place-items: center; font: 500 0.85rem var(--mono); color: var(--muted); pointer-events: none; }
+.hud { position: absolute; left: 12px; bottom: 10px; font: 400 0.72rem var(--mono); color: var(--muted); pointer-events: none; }
+.controls { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: center; }
+.group { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+.group .label { font: 500 0.7rem var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-right: 0.2rem; }
+button.chip { font: 500 0.82rem var(--body); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.8rem; cursor: pointer; display: inline-flex; gap: 0.45rem; align-items: center; }
+button.chip:hover { border-color: var(--muted); }
+button.chip[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+button.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sw { width: 0.65rem; height: 0.65rem; border-radius: 2px; display: inline-block; }
+
+/* cameras */
+.cams { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; }
+.cam { background: var(--panel); border: 1px solid var(--line); border-top: 3px solid var(--c); border-radius: 6px; padding: 1.1rem 1.1rem 1.2rem; display: grid; gap: 0.7rem; align-content: start; min-width: 0; }
+.cam .tag { font: 600 0.8rem var(--mono); color: var(--c); letter-spacing: 0.08em; }
+.cam dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 0.3rem 0.9rem; font-size: 0.88rem; }
+.cam dt { color: var(--muted); }
+.cam dd { margin: 0; min-width: 0; }
+.metric { display: flex; gap: 1.25rem; flex-wrap: wrap; padding-top: 0.2rem; }
+.metric div { display: grid; }
+.metric b { font: 500 1.35rem var(--mono); font-variant-numeric: tabular-nums; }
+.metric span { font-size: 0.75rem; color: var(--muted); }
+
+/* tables */
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 0.88rem; min-width: 30rem; }
+th, td { text-align: left; padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 500 0.72rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+.pill { font: 500 0.72rem var(--mono); padding: 0.1rem 0.5rem; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+.pill.good { color: var(--good); }
+.pill.warn { color: var(--warn); }
+
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 2rem; align-items: start; }
+.two > * { min-width: 0; }
+.mermaid { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 1rem; overflow-x: auto; margin: 0; }
+ol.steps { margin: 0; padding-left: 1.3rem; display: grid; gap: 0.55rem; max-width: 65ch; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.facts div { background: var(--panel); padding: 0.9rem 1rem; display: grid; gap: 0.2rem; }
+.facts b { font: 500 1.4rem var(--mono); font-variant-numeric: tabular-nums; }
+.facts span { font-size: 0.82rem; color: var(--muted); }
+a { color: var(--accent); }
+footer { font-size: 0.82rem; color: var(--muted); display: grid; gap: 0.4rem; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Voron Cascade · egc365 build · vision + digital twin study</div>
+    <h1>Cascade Vision Rig</h1>
+    <p class="lede">The Cascade has a <strong>fixed gantry and a moving table</strong>. The spindle only moves in X and Z, at one fixed depth, so every cut happens on the same narrow strip in space. You don't need to blanket the enclosure. <strong>Three sensors aimed at that strip, the tool, and the table</strong> cover it, and the machine's own axes do the precise measuring.</p>
+  </header>
+
+  <section aria-label="3D model">
+    <div class="stage">
+      <canvas id="view" aria-label="3D model of the Voron Cascade with camera view cones"></canvas>
+      <div class="status" id="status">Loading machine model, about 9 MB…</div>
+      <div class="hud" id="hud">drag to orbit · scroll or pinch to zoom · right-drag to pan</div>
+    </div>
+    <div class="controls">
+      <div class="group" role="group" aria-label="View">
+        <span class="label">View</span>
+        <button class="chip" id="v-iso" aria-pressed="true">Orbit</button>
+        <button class="chip" id="v-A" aria-pressed="false"><span class="sw" style="background:var(--cam-a)"></span>Through cam A</button>
+        <button class="chip" id="v-B" aria-pressed="false"><span class="sw" style="background:var(--cam-b)"></span>Through cam B</button>
+        <button class="chip" id="v-C" aria-pressed="false"><span class="sw" style="background:var(--cam-c)"></span>Through cam C</button>
+      </div>
+      <div class="group" role="group" aria-label="Show">
+        <span class="label">Show</span>
+        <button class="chip" id="t-cones" aria-pressed="true">View cones</button>
+        <button class="chip" id="t-cut" aria-pressed="true">Cut strip</button>
+        <button class="chip" id="t-panels" aria-pressed="false">Clear panels</button>
+      </div>
+    </div>
+    <p class="lede" style="font-size:0.92rem">This is your fork's own assembly CAD (the 116 MB STEP), tessellated and set to the default build. Fasteners, jigs and alternative parts are removed. The highlighted band is the cut strip: the full table width, from the table top to 60 mm of stock, at the spindle's depth.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">Ray-traced against the CAD</div>
+    <h2>Three sensors, three jobs</h2>
+    <p>Each camera was placed in the model and ray-traced against every part to count what it can actually see. A camera that only watches would miss things. Each one here covers what the others can't.</p>
+    <div class="cams" id="cams"></div>
+  </section>
+
+  <section class="two">
+    <div style="display:grid;gap:1rem">
+      <div class="eyebrow">Accuracy reality check</div>
+      <h2>Cameras watch. The machine measures.</h2>
+      <p>Depth cameras give millimetres. Machined parts need hundredths. A D405 is rated ±2% at 50 cm. Even at 26 cm, that is about a millimetre of absolute error, which is fine for "is the vise where CAM thinks it is" and useless for "is this pocket 12.00 mm deep".</p>
+      <p>For real measurement, use the ballscrews you already have. A touch probe (already an optional BOM line, with its own X-endstop mount) or a laser line on the Z carriage swept by the Y table measures in machine coordinates. Then the twin compares measured to planned in the same frame.</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Signal</th><th>Catches</th><th>Hardware</th></tr></thead>
+        <tbody>
+          <tr><td>Machine position</td><td>Drives the twin in real time</td><td>grblHAL status reports from the FlexiHAL</td></tr>
+          <tr><td>Spindle load</td><td>Dull or broken tool, overload, stall</td><td>H100 VFD over RS-485 Modbus</td></tr>
+          <tr><td>Vibration + sound</td><td>Chatter, a tool breaking, a loose fixture</td><td>Accelerometer on the Z carriage, contact mic</td></tr>
+          <tr><td>Touch probe</td><td>Stock origin, finished part dimensions</td><td>3D probe (BOM optional), probe X-endstop mount</td></tr>
+          <tr><td>Laser-line scan</td><td>Surface map of the finished part</td><td>Line laser + cam B, swept by the machine's axes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">How the pieces connect</div>
+    <h2>The twin loop</h2>
+    <div class="two">
+      <pre class="mermaid">
+flowchart LR
+  G[G-code job] --> F[FlexiHAL / grblHAL]
+  F -- position + state --> T[Digital twin<br/>on the Spark]
+  G --> T
+  T -- predicted stock --> D{Compare}
+  CA[Cam A + B<br/>live video] --> V[Vision model<br/>on the Spark]
+  CC[Cam C depth<br/>pre-job scan] --> D
+  S[Spindle load<br/>vibration] --> V
+  V --> D
+  D -- anomaly --> H[Feed hold]
+  H --> F
+  P[Probe / laser scan] -- measured part --> R[Deviation report]
+  T --> R
+      </pre>
+      <ol class="steps">
+        <li><b>Before the job</b>, cam C scans the table. The twin checks that the stock and clamps match the CAM setup and stops a collision before the first move.</li>
+        <li><b>During the job</b>, the twin replays machine position and removes material from a virtual stock. Cams A and B, spindle load and vibration go to a vision model on the Spark.</li>
+        <li><b>On an anomaly</b> (tool snapped, chips packing, part shifting, smoke), the Spark sends a feed hold back to grblHAL.</li>
+        <li><b>After the job</b>, the probe or laser-line scan measures the part in machine coordinates. The twin reports deviation from the model.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Where the build stands</div>
+    <h2>Build kickoff, from the repo</h2>
+    <div class="facts">
+      <div><b>105</b><span>printed pieces (75 files) for the default config</span></div>
+      <div><b>1.61 kg</b><span>filament estimate: 0.80 primary ABS, 0.51 accent ABS, 0.28 PLA jigs</span></div>
+      <div><b>149</b><span>purchase line items (25 excluded by config)</span></div>
+      <div><b>1</b><span>missing STL recovered: panel latch corner mount B</span></div>
+    </div>
+    <p>Default config: AC spindle (G-Penny 1.5 kW + H100 VFD), FlexiHAL with DM542T drivers, T-slot table, and the M8 80×30 Z plate. That plate matches the BOM's 65 mm clamp with the 80×30 bolt pattern. Change any of these in <span class="mono">build/config.json</span> and the lists regenerate.</p>
+  </section>
+
+  <footer>
+    <div>Sensor specs: <a href="https://realsenseai.com/products/stereo-depth-camera-d405/" target="_blank" rel="noopener">RealSense D405</a> · <a href="https://www.raspberrypi.com/products/raspberry-pi-global-shutter-camera/" target="_blank" rel="noopener">Raspberry Pi Global Shutter Camera</a> · <a href="https://github.com/Expatria-Technologies/Flexi-HAL" target="_blank" rel="noopener">Expatria FlexiHAL</a></div>
+    <div>Geometry and coverage numbers come from <span class="mono">build/tools/vision_study.py</span> run on the assembly in <a href="https://github.com/egc365/Voron-Cascade" target="_blank" rel="noopener">egc365/Voron-Cascade</a>.</div>
+  </footer>
+</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+// Output of build/tools/vision_study.py (machine mm: X right, D toward back, U up)
+const RIG = {"table":{"x":[-129,171],"d":[-53,167],"u":-1},"spindle":{"x":160.5,"d":153.5,"nose_u":43},
+"cameras":[
+{"id":"A","name":"Cut-strip overview","kind":"Global-shutter 2D","example":"Raspberry Pi Global Shutter Camera (IMX296, 1456×1088) with a 4 mm CS lens","mount":"Fixed to the working enclosure's front 2020 rail, looking back and down at the cut strip","pos":[21,0,262],"look":[21,150,20],"hfov":64.2,"vfov":50.2,"metrics":[["98.2%","of the cut strip visible"],["0.25 mm","per pixel at the strip"]]},
+{"id":"B","name":"Tool cam","kind":"Global-shutter 2D, close range","example":"Small USB global-shutter module (OV9281 class) with a ~70° M12 lens behind an air-purged window","mount":"On the Z carriage, front-left of the spindle. Moves with X and Z, so the framing never changes","pos":[112,95,115],"look":[160.5,150,20],"hfov":70,"vfov":50,"metrics":[["98.4%","of the tool tip zone visible"],["0.125 mm","per pixel at the tip"]]},
+{"id":"C","name":"Stock + fixture depth","kind":"Short-range stereo depth","example":"RealSense D405 (87°×58° field, 7–50 cm ideal range)","mount":"Fixed to the enclosure's top rail, straight down over the table's front (load) position","pos":[21,40,262],"look":[21,40,0],"hfov":87,"vfov":58,"metrics":[["100%","of the table in frame"],["~0.4 mm","per pixel at the table"]]}]};
+
+const css = getComputedStyle(document.documentElement);
+const tok = (n) => css.getPropertyValue(n).trim();
+const camColor = { A: "--cam-a", B: "--cam-b", C: "--cam-c" };
+
+// camera cards
+document.getElementById("cams").innerHTML = RIG.cameras.map((c) => `
+  <article class="cam" style="--c:var(${camColor[c.id]})">
+    <div class="tag">CAM ${c.id} · ${c.kind.toUpperCase()}</div>
+    <h3>${c.name}</h3>
+    <div class="metric">${c.metrics.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("")}</div>
+    <dl><dt>Example</dt><dd>${c.example}</dd><dt>Mount</dt><dd>${c.mount}</dd>
+    <dt>Field</dt><dd class="mono">${c.hfov}° × ${c.vfov}°</dd></dl>
+  </article>`).join("");
+
+// machine mm (X, D, U) -> three metres (X, U, -D)
+const V = ([x, d, u]) => new THREE.Vector3(x / 1000, u / 1000, -d / 1000);
+
+const canvas = document.getElementById("view");
+const status = document.getElementById("status");
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const scene = new THREE.Scene();
+scene.add(new THREE.HemisphereLight(0xffffff, 0x8a96a0, 1.6));
+const sun = new THREE.DirectionalLight(0xffffff, 1.6); sun.position.set(0.6, 1.2, 0.9); scene.add(sun);
+const fill = new THREE.DirectionalLight(0xffffff, 0.5); fill.position.set(-0.8, 0.4, -0.6); scene.add(fill);
+
+const orbitCam = new THREE.PerspectiveCamera(35, 1.6, 0.01, 20);
+orbitCam.position.set(0.55, 0.62, 0.95);
+const controls = new OrbitControls(orbitCam, canvas);
+controls.target.copy(V([60, 130, 60]));
+controls.enableDamping = true;
+controls.update();
+let active = orbitCam;
+
+// view cones
+const cones = new THREE.Group(); scene.add(cones);
+const povCams = {};
+for (const c of RIG.cameras) {
+  const color = new THREE.Color(tok(camColor[c.id]));
+  const p = V(c.pos), t = V(c.look);
+  const pc = new THREE.PerspectiveCamera(c.vfov, Math.tan(c.hfov * Math.PI / 360) / Math.tan(c.vfov * Math.PI / 360), 0.005, 5);
+  pc.position.copy(p);
+  if (c.id === "C") pc.up.set(0, 0, -1);
+  pc.lookAt(t); pc.updateMatrixWorld();
+  povCams[c.id] = pc;
+  const L = p.distanceTo(t);
+  const hx = Math.tan(c.hfov * Math.PI / 360) * L, hy = Math.tan(c.vfov * Math.PI / 360) * L;
+  const corners = [[-hx, -hy], [hx, -hy], [hx, hy], [-hx, hy]].map(([x, y]) => new THREE.Vector3(x, y, -L).applyMatrix4(pc.matrixWorld));
+  const pos = [];
+  corners.forEach((q, i) => { pos.push(p.x, p.y, p.z, q.x, q.y, q.z); const r = corners[(i + 1) % 4]; pos.push(q.x, q.y, q.z, r.x, r.y, r.z); });
+  const lg = new THREE.BufferGeometry(); lg.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+  cones.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color })));
+  const tri = [];
+  corners.forEach((q, i) => { const r = corners[(i + 1) % 4]; tri.push(p.x, p.y, p.z, q.x, q.y, q.z, r.x, r.y, r.z); });
+  const fg = new THREE.BufferGeometry(); fg.setAttribute("position", new THREE.Float32BufferAttribute(tri, 3));
+  cones.add(new THREE.Mesh(fg, new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.1, side: THREE.DoubleSide, depthWrite: false })));
+  const body = new THREE.Mesh(new THREE.BoxGeometry(0.018, 0.018, 0.012), new THREE.MeshStandardMaterial({ color }));
+  body.position.copy(p); body.quaternion.copy(pc.quaternion); cones.add(body);
+}
+
+// cut strip: table width x 0-60 mm stock height at the spindle's depth
+const T = RIG.table, S = RIG.spindle;
+const strip = new THREE.Mesh(new THREE.PlaneGeometry((T.x[1] - T.x[0]) / 1000, 0.06),
+  new THREE.MeshBasicMaterial({ color: new THREE.Color(tok("--accent")), transparent: true, opacity: 0.28, side: THREE.DoubleSide, depthWrite: false }));
+strip.position.copy(V([(T.x[0] + T.x[1]) / 2, S.d - 8, 30]));
+scene.add(strip);
+
+// machine
+const clearParts = [];
+// the model ships as base64 text (cascade.glb.txt) because artifacts don't serve .glb
+const failed = () => { status.textContent = "The 3D model didn't load. Reload the page to try again."; };
+fetch("cascade.glb.txt").then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); }).then((b64) => {
+  status.textContent = "Building the 3D model…";
+  const bin = atob(b64.trim()), buf = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+  new GLTFLoader().parse(buf.buffer, "", (g) => {
+  const root = g.scene;
+  root.rotation.x = -Math.PI / 2; // GLB stores (X, D, U); three is Y-up
+  root.traverse((o) => {
+    if (!o.isMesh) return;
+    o.material = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.62, metalness: 0.15 });
+    if (/sp-c|Accordion/i.test(o.name)) { // three strips [ ] from node names
+      o.material.transparent = true; o.material.opacity = 0.14; o.material.depthWrite = false;
+      o.visible = false; clearParts.push(o);
+    }
+  });
+  scene.add(root);
+  status.hidden = true;
+}, failed);
+}).catch(failed);
+
+// controls
+const setPressed = (ids, on) => ids.forEach((id) => document.getElementById(id).setAttribute("aria-pressed", String(id === on)));
+const viewIds = ["v-iso", "v-A", "v-B", "v-C"];
+const hud = document.getElementById("hud");
+document.getElementById("v-iso").onclick = () => { active = orbitCam; controls.enabled = true; setPressed(viewIds, "v-iso"); hud.textContent = "drag to orbit · scroll or pinch to zoom · right-drag to pan"; resize(); };
+for (const id of ["A", "B", "C"]) document.getElementById("v-" + id).onclick = () => {
+  active = povCams[id]; controls.enabled = false; setPressed(viewIds, "v-" + id);
+  hud.textContent = `what cam ${id} sees · ${RIG.cameras.find((c) => c.id === id).hfov}° wide`; resize();
+};
+const toggle = (id, fn) => { const b = document.getElementById(id); b.onclick = () => { const on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", String(on)); fn(on); }; };
+toggle("t-cones", (on) => { cones.visible = on; });
+toggle("t-cut", (on) => { strip.visible = on; });
+toggle("t-panels", (on) => clearParts.forEach((o) => { o.visible = on; }));
+
+function resize() {
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  renderer.setSize(w, h, false);
+  orbitCam.aspect = w / h; orbitCam.updateProjectionMatrix();
+  scene.background = new THREE.Color(tok("--stage"));
+}
+new ResizeObserver(resize).observe(canvas);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => setTimeout(resize, 50));
+new MutationObserver(() => setTimeout(resize, 50)).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+resize();
+
+renderer.setAnimationLoop(() => {
+  if (active === orbitCam) controls.update();
+  else {
+    // keep the camera's true field: letterbox to its aspect inside the canvas
+    const w = canvas.clientWidth, h = canvas.clientHeight, a = active.aspect;
+    const vw = Math.min(w, h * a), vh = vw / a;
+    renderer.setScissorTest(true);
+    renderer.setViewport(0, 0, w, h); renderer.setScissor(0, 0, w, h);
+    renderer.setClearColor(0x000000, 1); renderer.clear();
+    const x = (w - vw) / 2, y = (h - vh) / 2;
+    renderer.setViewport(x, y, vw, vh); renderer.setScissor(x, y, vw, vh);
+    cones.visible && (cones.userData.was = true); const showCones = cones.visible; cones.visible = false;
+    renderer.render(scene, active);
+    cones.visible = showCones;
+    renderer.setScissorTest(false); renderer.setViewport(0, 0, w, h);
+    return;
+  }
+  renderer.render(scene, active);
+});
+window.__cascade = { orbitCam, controls, V, povCams, show: (id) => document.getElementById(id).click() };
+</script>

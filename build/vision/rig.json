@@ -1,0 +1,105 @@
+{
+  "frame": "mm; X right, D toward back, U up; GLB stores (X, D, U) in metres",
+  "table": {
+    "x": [
+      -129,
+      171
+    ],
+    "d": [
+      -53,
+      167
+    ],
+    "u": -1
+  },
+  "spindle": {
+    "x": 160.5,
+    "d": 153.5,
+    "nose_u": 43
+  },
+  "cameras": [
+    {
+      "id": "A",
+      "name": "Cut-zone overview",
+      "kind": "global-shutter 2D",
+      "example": "Raspberry Pi Global Shutter Camera (IMX296, 1456x1088) + 4 mm CS lens",
+      "mount": "fixed, front 2020 rail of the working enclosure, looking back-down at the tool line",
+      "pos": [
+        21,
+        0,
+        262
+      ],
+      "look": [
+        21,
+        150,
+        20
+      ],
+      "hfov": 64.2,
+      "vfov": 50.2,
+      "px": [
+        1456,
+        1088
+      ],
+      "moves_with": null,
+      "cut_zone_visible_pct": 98.2,
+      "cut_zone_in_frame_pct": 100.0,
+      "mm_per_px_at_cut_zone": 0.248,
+      "table_in_frame_pct": 63.2,
+      "mm_per_px_at_table": 0.25
+    },
+    {
+      "id": "B",
+      "name": "Tool cam",
+      "kind": "global-shutter 2D, close range",
+      "example": "small USB global-shutter module (OV9281 class) with ~70 deg M12 lens, behind an air-purged window",
+      "mount": "on the Z carriage, front-left of the spindle; moves with X and Z",
+      "pos": [
+        112,
+        95,
+        115
+      ],
+      "look": [
+        160.5,
+        150,
+        20
+      ],
+      "hfov": 70,
+      "vfov": 50,
+      "px": [
+        1280,
+        800
+      ],
+      "moves_with": "Z carriage",
+      "tool_tip_visible_pct": 98.4,
+      "mm_per_px_at_tip": 0.125
+    },
+    {
+      "id": "C",
+      "name": "Stock + fixture depth",
+      "kind": "short-range stereo depth",
+      "example": "RealSense D405 (87x58 deg, 7-50 cm ideal range)",
+      "mount": "fixed, enclosure top rail, straight down over the table's front (load) position",
+      "pos": [
+        21,
+        40,
+        262
+      ],
+      "look": [
+        21,
+        40,
+        0
+      ],
+      "hfov": 87,
+      "vfov": 58,
+      "px": [
+        1280,
+        720
+      ],
+      "moves_with": null,
+      "cut_zone_visible_pct": 97.2,
+      "cut_zone_in_frame_pct": 100.0,
+      "mm_per_px_at_cut_zone": 0.4,
+      "table_in_frame_pct": 100.0,
+      "mm_per_px_at_table": 0.424
+    }
+  ]
+}
