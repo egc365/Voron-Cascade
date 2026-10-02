@@ -290,7 +290,13 @@ scene.add(strip);
 
 // machine
 const clearParts = [];
-new GLTFLoader().load("cascade.glb", (g) => {
+// the model ships as base64 text (cascade.glb.txt) because artifacts don't serve .glb
+const failed = () => { status.textContent = "The 3D model didn't load. Reload the page to try again."; };
+fetch("cascade.glb.txt").then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); }).then((b64) => {
+  status.textContent = "Building the 3D model…";
+  const bin = atob(b64.trim()), buf = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+  new GLTFLoader().parse(buf.buffer, "", (g) => {
   const root = g.scene;
   root.rotation.x = -Math.PI / 2; // GLB stores (X, D, U); three is Y-up
   root.traverse((o) => {
@@ -303,8 +309,8 @@ new GLTFLoader().load("cascade.glb", (g) => {
   });
   scene.add(root);
   status.hidden = true;
-}, (e) => { if (e.total) status.textContent = `Loading machine model… ${Math.round(100 * e.loaded / e.total)}%`; },
-() => { status.textContent = "The 3D model didn't load. Reload the page to try again."; });
+}, failed);
+}).catch(failed);
 
 // controls
 const setPressed = (ids, on) => ids.forEach((id) => document.getElementById(id).setAttribute("aria-pressed", String(id === on)));

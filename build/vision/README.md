@@ -85,7 +85,7 @@ flowchart LR
 | File | |
 |---|---|
 | `rig.json` | Camera placements and ray-traced coverage |
-| `index.html` | Interactive 3D page: the machine, view cones, and a view through each camera. It loads `cascade.glb` from the same folder (not committed; see below) |
+| `index.html` | Interactive 3D page: the machine, view cones, and a view through each camera. It loads `cascade.glb.txt` (the GLB as base64, since artifact hosting doesn't serve `.glb`) from the same folder. Not committed; see below |
 | `renders/` | Screenshots of the page |
 
 ## Regenerating
@@ -96,7 +96,8 @@ unzip CAD/Voron_Cascade_Assembly_STEP.zip -d /tmp/cascade
 python build/tools/step_to_glb.py /tmp/cascade/Voron_Cascade_Assembly.step /tmp/cascade/full.glb 0.4   # ~75 s
 python build/tools/slim_glb.py /tmp/cascade/full.glb /tmp/cascade/slim.glb    # drop fasteners, decimate
 python build/tools/vision_study.py /tmp/cascade/slim.glb                       # -> build/vision/rig.json
-python build/tools/web_glb.py /tmp/cascade/slim.glb build/vision/cascade.glb  # configured machine for the page
+python build/tools/web_glb.py /tmp/cascade/slim.glb /tmp/cascade/web.glb      # configured machine for the page
+base64 -w0 /tmp/cascade/web.glb > build/vision/cascade.glb.txt
 # screenshots: npm i three@0.170.0 playwright in build/tools, then
 CHROME=/path/to/chrome node build/tools/render_views.mjs build/vision build/vision/renders
 ```

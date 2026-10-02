@@ -9,7 +9,7 @@ const THREE_DIR = path.join(path.dirname(new URL(import.meta.url).pathname), "no
 const html = `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0">${fs.readFileSync(PAGE + "/index.html", "utf8")}</body></html>`;
 const srv = http.createServer((q, r) => {
   if (q.url === "/" ) { r.writeHead(200, {"content-type": "text/html"}); return r.end(html); }
-  const f = path.join(PAGE, q.url); if (fs.existsSync(f)) { r.writeHead(200); return r.end(fs.readFileSync(f)); }
+  const f = path.join(PAGE, decodeURIComponent(q.url)); if (fs.existsSync(f)) { r.writeHead(200); return r.end(fs.readFileSync(f)); }
   r.writeHead(404); r.end();
 }).listen(8765);
 const b = await chromium.launch({ executablePath: process.env.CHROME || undefined, args: ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"] });
