@@ -1,0 +1,70 @@
+{
+  "_comment": "Build configuration. Edit, then re-run build/tools/print_list.py and build/tools/purchase_list.py.",
+  "printer_bed_mm": "250x250x250",
+  "self_drill_frame": false,
+  "self_cut_panels": false,
+  "spindle": "Option 1: AC VFD (strongly preferred)",
+  "controller": "Option 1: Expatria FlexiHAL + external drivers",
+  "work_table": "Option 1: T-Slot table",
+  "z_carriage_plate": "[mp-a]_z_carriage_plate_M8_80x30",
+  "include_optional": false,
+  "selections": {
+    "x_endstop": "[pp-s]_x_endstop_mount_short_body",
+    "z_carriage_cover": "[pp-s]_z_carriage_cover_air_mount",
+    "sexbolt_shield": "[pp-p]_sexbolt_debris_shield_extrusion",
+    "tool_setter_above": "none",
+    "tool_setter_under": "[pp-p]_tool_setter_under_mount_extrusion",
+    "y_endstop": "[pp-p]_y_endstop_mount_short_body",
+    "controller_mount": "[pp-p]_flexihal_DIN_mount_pair",
+    "psu_mount": "[pp-p]_lrs_350_saddle_mount",
+    "psu_mount_se600_b": "none",
+    "display_front": "[pp-p]_display_mount_landscape_front",
+    "display_rear": "[pp-p]_display_mount_landscape_rear"
+  },
+  "options": {
+    "x_endstop": [
+      "[pp-s]_x_endstop_mount_long_body",
+      "[pp-s]_x_endstop_mount_short_body",
+      "[pp-s]_x_endstop_probe_mount_long_body",
+      "[pp-s]_x_endstop_probe_mount_short_body"
+    ],
+    "z_carriage_cover": [
+      "[pp-s]_z_carriage_cover_air_mount",
+      "[pp-s]_z_carriage_cover_blank"
+    ],
+    "sexbolt_shield": [
+      "[pp-p]_sexbolt_debris_shield_extrusion",
+      "[pp-p]_sexbolt_debris_shield_grid"
+    ],
+    "tool_setter_above": [
+      "[pp-p]_tool_setter_cable_guide_OPTIONAL"
+    ],
+    "tool_setter_under": [
+      "[pp-p]_tool_setter_under_mount_extrusion",
+      "[pp-p]_tool_setter_under_mount_grid"
+    ],
+    "y_endstop": [
+      "[pp-p]_y_endstop_mount_long_body",
+      "[pp-p]_y_endstop_mount_short_body"
+    ],
+    "controller_mount": [
+      "[pp-p]_flexihal_DIN_mount_pair",
+      "[pp-p]_scylla_DIN_mount_pair"
+    ],
+    "psu_mount": [
+      "[pp-p]_lrs_350_saddle_mount",
+      "[pp-p]_se_600_mount_A"
+    ],
+    "psu_mount_se600_b": [
+      "[pp-p]_se_600_mount_B"
+    ],
+    "display_front": [
+      "[pp-p]_display_mount_landscape_front",
+      "[pp-p]_display_mount_portrait_front"
+    ],
+    "display_rear": [
+      "[pp-p]_display_mount_landscape_rear",
+      "[pp-p]_display_mount_portrait_rear"
+    ]
+  }
+}

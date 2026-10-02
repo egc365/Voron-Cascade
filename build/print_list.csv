@@ -1,0 +1,98 @@
+include,category,name,qty,color,material,grams,volume_cm3,bbox_mm,fits_bed,notes,file
+False,Tools and Guides - Frame Drilling,[pp-p]_drill_jig_frame_base_corners,1,N/A,PLA,19.8,22.3,66x53x16,True,Only needed if self drilling frame,STLs/Tools_and_guides/[pp-p]_drill_jig_frame_base_corners.stl
+False,Tools and Guides - Frame Drilling,[pp-p]_drill_jig_frame_base_gantry,1,N/A,PLA,36.5,38.6,36x183x15,True,Only needed if self drilling frame,STLs/Tools_and_guides/[pp-p]_drill_jig_frame_base_gantry.stl
+False,Tools and Guides - Frame Drilling,[pp-p]_drill_jig_frame_base_rails,1,N/A,PLA,69.4,81.4,208x66x16,True,Only needed if self drilling frame,STLs/Tools_and_guides/[pp-p]_drill_jig_frame_base_rails.stl
+False,Tools and Guides - Frame Drilling,[pp-p]_drill_jig_gantry_frame_left,1,N/A,PLA,69.4,80.9,203x66x16,True,Only needed if self drilling frame,STLs/Tools_and_guides/[pp-p]_drill_jig_gantry_frame_left.stl
+False,Tools and Guides - Frame Drilling,[pp-p]_drill_jig_gantry_frame_right,1,N/A,PLA,69.4,80.9,203x66x16,True,Only needed if self drilling frame,STLs/Tools_and_guides/[pp-p]_drill_jig_gantry_frame_right.stl
+False,Tools and Guides - Panel Drilling,[pp-p]_drill_template_60mm_fan,1,N/A,PLA,8.8,7.1,60x60x2,True,Only needed if self cutting panels,STLs/Tools_and_guides/[pp-p]_drill_template_60mm_fan.stl
+False,Tools and Guides - Panel Drilling,[pp-p]_drill_template_60mm_fan_with_keystones,1,N/A,PLA,12.5,10.1,60x85x2,True,Only needed if self cutting panels,STLs/Tools_and_guides/[pp-p]_drill_template_60mm_fan_with_keystones.stl
+False,Tools and Guides - Panel Drilling,[pp-p]_drill_template_display_mount,1,N/A,PLA,5.9,4.8,43x56x2,True,Only needed if self cutting panels,STLs/Tools_and_guides/[pp-p]_drill_template_display_mount.stl
+False,Tools and Guides - Panel Drilling,[pp-p]_drill_template_power_inlet,1,N/A,PLA,9.9,8.0,90x45x2,True,Only needed if self cutting panels,STLs/Tools_and_guides/[pp-p]_drill_template_power_inlet.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_1204_screw_clamp_A,1,N/A,PLA,3.8,4.2,30x20x10,True,,STLs/Tools_and_guides/[pp-p]_1204_screw_clamp_A.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_1204_screw_clamp_B,1,N/A,PLA,4.0,4.5,30x20x10,True,,STLs/Tools_and_guides/[pp-p]_1204_screw_clamp_B.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_alignment_guide_2020_mgn15,2,N/A,PLA,3.6,3.9,30x26x10,True,,STLs/Tools_and_guides/[pp-p]_alignment_guide_2020_mgn15_x2.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_alignment_guide_3030_mgn15,2,N/A,PLA,4.7,5.4,40x26x10,True,,STLs/Tools_and_guides/[pp-p]_alignment_guide_3030_mgn15_x2.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_alignment_guide_3060_mgn15,2,N/A,PLA,4.7,5.4,51x25x10,True,,STLs/Tools_and_guides/[pp-p]_alignment_guide_3060_mgn15_x2.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_alignment_tool_x_axis,1,N/A,PLA,55.7,77.5,43x189x10,True,,STLs/Tools_and_guides/[pp-p]_alignment_tool_x_axis.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_alignment_tool_y_axis,1,N/A,PLA,60.5,86.1,204x43x10,True,,STLs/Tools_and_guides/[pp-p]_alignment_tool_y_axis.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_alignment_tool_y_drive,1,N/A,PLA,82.1,118.6,202x85x10,True,,STLs/Tools_and_guides/[pp-p]_alignment_tool_y_drive.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_ballscrew_1204_maint_tool,1,N/A,PLA,2.6,2.1,10x10x45,True,,STLs/Tools_and_guides/[pp-p]_ballscrew_1204_maint_tool_v2.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_setup_tool_z,1,N/A,PLA,36.7,51.7,105x56x10,True,,STLs/Tools_and_guides/[pp-p]_setup_tool_z.stl
+True,Tools and Guides - Assembly & Alignment,[pp-p]_tramming_bar,1,N/A,PLA,10.7,13.3,100x15x10,True,,STLs/Tools_and_guides/[pp-p]_tramming_bar.stl
+False,Core Frame and Drive,[pp-s]_x_endstop_mount_long_body,1,accent,ABS,5.8,7.2,30x60x7,True,"Choose 1 of 4 (no 3d probe, long sensor)",STLs/Gantry/X Endstop/[pp-s]_x_endstop_mount_long_body.stl
+True,Core Frame and Drive,[pp-s]_x_endstop_mount_short_body,1,accent,ABS,5.8,7.2,30x60x7,True,"Choose 1 of 4 (no 3d probe, short sensor)",STLs/Gantry/X Endstop/[pp-s]_x_endstop_mount_short_body.stl
+False,Core Frame and Drive,[pp-s]_x_endstop_probe_mount_long_body,1,accent,ABS,22.1,33.9,50x65x40,True,"Choose 1 of 4 (3d probe, long sensor)",STLs/Gantry/X Endstop/[pp-s]_x_endstop_probe_mount_long_body.stl
+False,Core Frame and Drive,[pp-s]_x_endstop_probe_mount_short_body,1,accent,ABS,22.4,34.6,50x65x40,True,"Choose 1 of 4 (3d probe, short sensor)",STLs/Gantry/X Endstop/[pp-s]_x_endstop_probe_mount_short_body.stl
+True,Core Frame and Drive,[pp-s]_x_endstop_trigger_mount,1,accent,ABS,3.5,4.2,38x14x20,True,,STLs/Gantry/X Carriage/[pp-s]_x_endstop_trigger_mount.stl
+True,Core Frame and Drive,[pp-s]_z_carriage_cover_air_mount,1,accent,ABS,15.5,19.4,120x25x30,True,Choose 1 of 2,STLs/Gantry/X Carriage/Z Carriage/[pp-s]_z_carriage_cover_air_mount.stl
+False,Core Frame and Drive,[pp-s]_z_carriage_cover_blank,1,accent,ABS,9.6,9.3,120x26x5,True,Choose 1 of 2,STLs/Gantry/X Carriage/Z Carriage/[pp-s]_z_carriage_cover_blank.stl
+True,Core Frame and Drive,[pp-s]_z_drive_belt_guard,1,accent,ABS,9.2,8.9,47x151x6,True,,STLs/Gantry/X Carriage/Z Drive Mount/[pp-s]_z_drive_belt_guard.stl
+True,Core Frame and Drive,[pp-s]_z_drive_mount,1,accent,ABS,225.5,404.5,106x179x58,True,,STLs/Gantry/X Carriage/Z Drive Mount/[pp-s]_z_drive_mount.stl
+True,Core Frame and Drive,[pp-s]_z_drive_mount_cover,1,accent,ABS,59.9,59.4,105x179x62,True,,STLs/Gantry/X Carriage/Z Drive Mount/[pp-s]_z_drive_mount_cover.stl
+True,Core Frame and Drive,[pp-s]_z_endstop_clamp,1,accent,ABS,0.5,0.5,18x8x4,True,,STLs/Gantry/X Carriage/Z Drive Mount/[pp-s]_z_endstop_clamp.stl
+True,Core Frame and Drive,[pp-p]_3030_m6_nut_carrier,1,primary,ABS,0.7,0.6,14x15x6,True,,STLs/Gantry/Gantry Side Bracing/Gantry Side Brace Left/[pp-p]_3030_m6_nut_carrier.stl
+True,Core Frame and Drive,[pp-p]_frame_cable_routing_cover,1,primary,ABS,8.4,12.1,52x30x10,True,,STLs/Base/Frame Cable Routing/[pp-p]_frame_cable_routing_cover.stl
+True,Core Frame and Drive,[pp-p]_frame_endstop_cable_guide,1,primary,ABS,6.0,9.0,40x41x10,True,,STLs/Base/Endstop Cable Guide/[pp-p]_frame_endstop_cable_guide.stl
+True,Core Frame and Drive,[pp-p]_gantry_chain_mount,1,primary,ABS,27.2,36.1,195x30x20,True,,STLs/Gantry/Drag Chain/[pp-p]_gantry_chain_mount.stl
+True,Core Frame and Drive,[pp-p]_rail_stop_20mm,2,primary,ABS,6.9,11.6,30x20x20,True,,STLs/Base/[pp-p]_rail_stop_20mm_x2.stl
+True,Core Frame and Drive,[pp-p]_sexbolt_debris_shield_extrusion,1,primary,ABS,1.8,2.0,25x16x10,True,Choose 1 of 2,STLs/Base/Worktable/Tool Setter (Below)/[pp-p]_sexbolt_debris_shield_extrusion.stl
+False,Core Frame and Drive,[pp-p]_sexbolt_debris_shield_grid,1,primary,ABS,0.6,0.6,16x34x4,True,Choose 1 of 2,STLs/Base/Worktable/Tool Setter (Below)/[pp-p]_sexbolt_debris_shield_grid.stl
+False,Core Frame and Drive,[pp-p]_tool_setter_cable_guide_OPTIONAL,1,primary,ABS,4.3,5.0,42x35x15,True,Only if using above table tool setter,STLs/Base/Worktable/Tool Setter (Above) OPTIONAL/[pp-p]_tool_setter_cable_guide_OPTIONAL.stl
+True,Core Frame and Drive,[pp-p]_tool_setter_under_mount_extrusion,1,primary,ABS,6.4,8.7,20x46x17,True,"Choose 1 of 2, only for under table tool setter",STLs/Base/Worktable/Tool Setter (Below)/[pp-p]_tool_setter_under_mount_extrusion.stl
+False,Core Frame and Drive,[pp-p]_tool_setter_under_mount_grid,1,primary,ABS,6.9,9.4,20x54x17,True,"Choose 1 of 2, only for under table tool setter",STLs/Base/Worktable/Tool Setter (Below)/[pp-p]_tool_setter_under_mount_grid.stl
+True,Core Frame and Drive,[pp-p]_x_ballscrew_block_mount,1,primary,ABS,5.4,7.6,17x63x9,True,,STLs/Gantry/X Drive/X Ballscrew/[pp-p]_x_ballscrew_block_mount.stl
+True,Core Frame and Drive,[pp-p]_x_motor_mount,1,primary,ABS,78.5,128.5,118x87x58,True,,STLs/Gantry/X Drive/X Motor Mount/[pp-p]_x_motor_mount.stl
+True,Core Frame and Drive,[pp-p]_x_spacer_washer_guide,1,primary,ABS,0.8,0.7,49x50x0,True,,STLs/Tools_and_guides/[pp-p]_x_spacer_washer_guide.stl
+False,Core Frame and Drive,[pp-p]_y_endstop_mount_long_body,1,primary,ABS,2.7,3.2,21x38x5,True,Choose 1 of 2,STLs/Base/Y Endstop/[pp-p]_y_endstop_mount_long_body.stl
+True,Core Frame and Drive,[pp-p]_y_endstop_mount_short_body,1,primary,ABS,2.9,3.5,40x40x5,True,Choose 1 of 2,STLs/Base/Y Endstop/[pp-p]_y_endstop_mount_short_body.stl
+True,Core Frame and Drive,[pp-p]_y_motor_mount,1,primary,ABS,58.3,93.4,159x60x28,True,,STLs/Base/Y Drive Assembly/Y Motor Mount/[pp-p]_y_motor_mount.stl
+True,Core Frame and Drive,[pp-p]_y_motor_tension_block,1,primary,ABS,3.1,3.8,12x46x9,True,,STLs/Base/Y Drive Assembly/Y Motor Mount/[pp-p]_y_motor_tension_block.stl
+True,Electrical,[pp-s]_air_inlet_cover_hex,1,accent,ABS,8.3,8.0,62x62x5,True,,STLs/Electronics/Electronics Hardware/[pp-s]_air_inlet_cover_hex.stl
+True,Electrical,[pp-s]_air_inlet_cover_mount_ring,1,accent,ABS,3.1,3.0,64x64x5,True,,STLs/Electronics/Electronics Hardware/[pp-s]_air_inlet_cover_mount_ring.stl
+True,Electrical,[pp-s]_fan_cover_keystone_hex,1,accent,ABS,14.5,14.5,62x97x10,True,,STLs/Electronics/Electronics Power/[pp-s]_fan_cover_keystone_hex.stl
+True,Electrical,[pp-s]_fan_cover_mount_plate,1,accent,ABS,1.8,2.0,62x11x5,True,,STLs/Electronics/Electronics Power/[pp-s]_fan_cover_mount_plate.stl
+True,Electrical,[pp-s]_keystone_blank,2,accent,ABS,2.3,2.3,23x15x15,True,,STLs/Electronics/Electronics Power/[pp-s]_keystone_blank_x2.stl
+True,Electrical,[pp-c]_daylight_cover,1,clear,PETG,14.9,11.7,21x170x11,True,,STLs/Working_enclosure/[pp-c]_daylight_cover.stl
+True,Electrical,[pp-p]_DIN Clips,1,primary,ABS,3.5,3.9,17x62x8,True,,STLs/Electronics/Controller/[pp-p]_DIN Clips.stl
+True,Electrical,[pp-p]_IRM-30-XXST_din_mount,2,primary,ABS,15.0,19.3,48x91x10,True,,STLs/Electronics/Electronics Power/[pp-p]_IRM-30-XXST_din_mount_x2.stl
+True,Electrical,[pp-p]_WAGO_221-415_3x5_2020mount,1,primary,ABS,9.1,8.8,120x23x12,True,,STLs/Electronics/Electronics Power/[pp-p]_WAGO_221-415_2020mount-3x5.stl
+True,Electrical,[pp-p]_WAGO_221-415_2x5-2020mount,2,primary,ABS,6.5,6.3,88x23x12,True,,STLs/Electronics/Electronics Power/[pp-p]_WAGO_221-415_2x5-2020mount_x2.stl
+True,Electrical,[pp-p]_cable_mount_20mm,8,primary,ABS,1.5,1.5,20x20x7,True,,STLs/Electronics/Frame Enclosure/[pp-p]_cable_mount_20mm_x8.stl
+True,Electrical,[pp-p]_flexihal_DIN_mount_pair,1,primary,ABS,7.8,8.1,40x101x7,True,Only if using FlexiHAL controller,STLs/Electronics/Controller/[pp-p]_flexihal_DIN_mount_pair.stl
+False,Electrical,[pp-p]_scylla_DIN_mount_pair,1,primary,ABS,7.8,8.1,40x101x7,True,Only if using Scylla controller,STLs/Electronics/Controller/[pp-p]_scylla_DIN_mount_pair.stl
+True,Electrical,[pp-p]_lrs_350_saddle_mount,2,primary,ABS,10.3,12.2,142x26x20,True,Only if using LRS 350 48V power supply,STLs/Electronics/AC Spindle/[pp-p]_lrs_350_saddle_mount_x2.stl
+False,Electrical,[pp-p]_se_600_mount_A,1,primary,ABS,10.8,13.0,146x19x36,True,Only if using SE600 48V power supply,STLs/Electronics/DC 48V Spindle OPTIONAL/[pp-p]_se_600_mount_A.stl
+False,Electrical,[pp-p]_se_600_mount_B,1,primary,ABS,10.6,12.7,146x19x31,True,Only if using SE600 48V power supply,STLs/Electronics/DC 48V Spindle OPTIONAL/[pp-p]_se_600_mount_B.stl
+True,Electrical,[pp-p]_pi_mount_2020,1,primary,ABS,9.8,11.6,62x117x15,True,,STLs/Electronics/Controller/[pp-p]_pi_mount_2020.stl
+True,Electrical,[pp-p]_power_inlet_panel_mount_ring,1,primary,ABS,4.9,4.9,90x45x4,True,,STLs/Electronics/Electronics Power/[pp-p]_power_inlet_panel_mount_ring.stl
+True,Electrical,[pp-p]_power_inlet_panel_powercon,1,primary,ABS,12.4,15.1,95x50x6,True,,STLs/Electronics/Electronics Power/[pp-p]_power_inlet_panel_powercon.stl
+True,Workspace Enclosure,[pp-s]_3030_enclosure_panel_clip,6,accent,ABS,4.8,7.3,30x30x11,True,,STLs/Working_enclosure/[pp-s]_3030_enclosure_panel_clip_x6.stl
+True,Workspace Enclosure,[pp-s]_3060_end_cap_enclosure_panel_clip,4,accent,ABS,10.3,16.5,30x60x14,True,,STLs/Working_enclosure/[pp-s]_3060_end_cap_enclosure_panel_clip_x4.stl
+True,Workspace Enclosure,[pp-p]_enclosure_handle,3,primary,ABS,20.7,29.8,120x38x20,True,,STLs/Working_enclosure/[pp-p]_enclosure_handle_x3.stl
+True,Workspace Enclosure,[pp-p]_working_enclosure_frame_mount_front,1,primary,ABS,23.7,34.1,28x192x20,True,,STLs/Working_enclosure/[pp-p]_working_enclosure_frame_mount_front.stl
+True,Workspace Enclosure,[pp-p]_working_enclosure_rear_mount_left,1,primary,ABS,11.0,18.9,34x32x35,True,,STLs/Working_enclosure/[pp-p]_working_enclosure_rear_mount_left.stl
+True,Workspace Enclosure,[pp-p]_working_enclosure_rear_mount_right,1,primary,ABS,11.0,18.9,34x32x35,True,,STLs/Working_enclosure/[pp-p]_working_enclosure_rear_mount_right.stl
+True,Frame Enclosure,[pp-s]_frame_enclosure_corner_cap_foot,2,accent,ABS,18.1,19.4,160x28x25,True,,STLs/Electronics/Frame Enclosure/[pp-s]_frame_enclosure_corner_cap_foot_x2.stl
+True,Frame Enclosure,[pp-s]_frame_enclosure_corner_cap_plain,2,accent,ABS,17.3,18.1,160x25x26,True,,STLs/Electronics/Frame Enclosure/[pp-s]_frame_enclosure_corner_cap_plain_x2.stl
+True,Frame Enclosure,[pp-s]_panel_frame_hook_A,1,accent,ABS,4.2,6.1,26x34x10,True,,STLs/Electronics/Frame Enclosure/Frame Enclosure Latch Corner/[pp-s]_panel_frame_hook_A.stl
+True,Frame Enclosure,[pp-s]_panel_frame_hook_B,1,accent,ABS,4.2,6.1,26x34x10,True,,STLs/Electronics/Frame Enclosure/Frame Enclosure Latch Corner/[pp-s]_panel_frame_hook_B.stl
+True,Frame Enclosure,[pp-s]_panel_latch_arm_A,1,accent,ABS,1.2,1.3,30x15x4,True,,STLs/Electronics/Frame Enclosure/Frame Enclosure Latch Corner/[pp-s]_panel_latch_arm_A.stl
+True,Frame Enclosure,[pp-s]_panel_latch_arm_B,1,accent,ABS,1.2,1.3,30x15x4,True,,STLs/Electronics/Frame Enclosure/Frame Enclosure Latch Corner/[pp-s]_panel_latch_arm_B.stl
+True,Frame Enclosure,[pp-s]_panel_latch_corner_mount_A,1,accent,ABS,3.3,4.2,41x26x8,True,,STLs/Electronics/Frame Enclosure/Frame Enclosure Latch Corner/[pp-s]_panel_latch_corner_mount_A.stl
+True,Frame Enclosure,[pp-s]_panel_latch_corner_mount_B,1,accent,ABS,3.3,4.2,41x26x8,True,,STLs/Electronics/Frame Enclosure/Frame Enclosure Latch Corner/[pp-s]_panel_latch_corner_mount_B.stl
+True,Frame Enclosure,[pp-p]_cable_protection_fitting,1,primary,ABS,3.7,3.5,38x35x14,True,,STLs/Working_enclosure/Gantry Trim/[pp-p]_cable_protection_fitting.stl
+True,Frame Enclosure,[pp-p]_cable_protection_nut,1,primary,ABS,3.2,3.1,39x39x7,True,,STLs/Working_enclosure/Gantry Trim/[pp-p]_cable_protection_nut.stl
+True,Frame Enclosure,[pp-p]_display_mount_landscape_front,1,primary,ABS,37.0,56.3,90x90x31,True,If using display in landscape orientation,STLs/Electronics/Display Mount/[pp-p]_display_mount_landscape_front.stl
+True,Frame Enclosure,[pp-p]_display_mount_landscape_rear,1,primary,ABS,16.7,24.0,43x56x25,True,If using display in landscape orientation,STLs/Electronics/Display Mount/[pp-p]_display_mount_landscape_rear.stl
+False,Frame Enclosure,[pp-p]_display_mount_portrait_front,1,primary,ABS,37.0,56.3,90x90x31,True,If using display in portrait orientation,STLs/Electronics/Display Mount/[pp-p]_display_mount_portrait_front.stl
+False,Frame Enclosure,[pp-p]_display_mount_portrait_rear,1,primary,ABS,27.6,40.8,158x56x25,True,If using display in portrait orientation,STLs/Electronics/Display Mount/[pp-p]_display_mount_portrait_rear.stl
+True,Trim,[pp-s]_3060_end_cap_logo,1,accent,ABS,4.6,4.9,30x60x3,True,,STLs/Working_enclosure/Gantry Trim/[pp-s]_3060_end_cap_logo.stl
+True,Trim,[pp-p]_accordion_cover_mount_A,2,primary,ABS,23.5,26.2,204x30x17,True,,STLs/Base/Debris Shield/Accordion Cover Mount/[pp-p]_accordion_cover_mount_A_x2.stl
+True,Trim,[pp-p]_accordion_cover_mount_B,2,primary,ABS,23.5,26.2,204x30x17,True,,STLs/Base/Debris Shield/Accordion Cover Mount/[pp-p]_accordion_cover_mount_B_x2.stl
+True,Trim,[pp-p]_debris_shield_back_left,1,primary,ABS,15.6,22.7,30x101x17,True,,STLs/Base/Debris Shield/[pp-p]_debris_shield_back_left.stl
+True,Trim,[pp-p]_debris_shield_back_right,1,primary,ABS,15.6,22.7,30x101x17,True,,STLs/Base/Debris Shield/[pp-p]_debris_shield_back_right.stl
+True,Trim,[pp-p]_debris_shield_front_left,1,primary,ABS,30.9,44.2,30x222x17,True,,STLs/Base/Debris Shield/[pp-p]_debris_shield_front_left.stl
+True,Trim,[pp-p]_debris_shield_front_right,1,primary,ABS,30.0,43.6,30x222x17,True,,STLs/Base/Debris Shield/[pp-p]_debris_shield_front_right.stl
+True,Trim,[pp-p]_gantry_front_brace_cover,2,primary,ABS,34.0,43.5,108x120x30,True,,STLs/Working_enclosure/Gantry Trim/[pp-p]_gantry_front_brace_cover_x2.stl
+True,Trim,[pp-p]_x_drive_debris_cover_left,1,primary,ABS,15.1,23.8,119x28x18,True,,STLs/Working_enclosure/Gantry Trim/[pp-p]_x_drive_debris_cover_left.stl
+True,Trim,[pp-p]_x_drive_debris_cover_right,1,primary,ABS,24.0,30.3,119x28x58,True,,STLs/Working_enclosure/Gantry Trim/[pp-p]_x_drive_debris_cover_right.stl
